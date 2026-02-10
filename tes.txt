@@ -1,8 +1,4 @@
 hello!
 Edited1
-<<<<<<< HEAD
-=======
-fix critical bug
->>>>>>> fix/fix_critical-bug
 cool feature
 
