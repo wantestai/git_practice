@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Révision des multiplications</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Révision des multiplications</h1>
+
+    <section class="tile" aria-live="polite">
+      <p id="operation" class="operation">4 × 6</p>
+    </section>
+
+    <form id="quiz-form" class="quiz-form">
+      <label for="answer">Ta réponse :</label>
+      <input id="answer" name="answer" type="number" inputmode="numeric" required>
+      <div class="actions">
+        <button type="submit">Vérifier</button>
+        <button type="button" id="next">Nouvelle multiplication</button>
+      </div>
+    </form>
+
+    <p id="feedback" class="feedback"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
