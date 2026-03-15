@@ -3,27 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Révision des multiplications</title>
+  <title>Infographic Prompt Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Révision des multiplications</h1>
+  <div class="background-glow"></div>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">EFFI10 STYLE TOOL</p>
+      <h1>Infographic Prompt Generator</h1>
+      <p class="subtitle">
+        Créez en quelques secondes un prompt structuré pour générer une infographie claire, moderne et engageante.
+      </p>
+    </header>
 
-    <section class="tile" aria-live="polite">
-      <p id="operation" class="operation">4 × 6</p>
-    </section>
+    <section class="card" aria-labelledby="generator-title">
+      <h2 id="generator-title">Paramètres du visuel</h2>
 
-    <form id="quiz-form" class="quiz-form">
-      <label for="answer">Ta réponse :</label>
-      <input id="answer" name="answer" type="number" inputmode="numeric" required>
-      <div class="actions">
-        <button type="submit">Vérifier</button>
-        <button type="button" id="next">Nouvelle multiplication</button>
+      <form id="generator-form" class="form-grid">
+        <label>
+          Sujet principal
+          <input id="topic" type="text" placeholder="Ex : Intelligence artificielle en entreprise" required>
+        </label>
+
+        <label>
+          Public ciblé
+          <input id="audience" type="text" placeholder="Ex : Dirigeants de PME" required>
+        </label>
+
+        <label>
+          Style graphique
+          <select id="style" required>
+            <option value="">Choisir un style</option>
+            <option>Moderne minimaliste</option>
+            <option>Corporate premium</option>
+            <option>Illustratif flat design</option>
+            <option>Futuriste high-tech</option>
+            <option>Éditorial magazine</option>
+          </select>
+        </label>
+
+        <label>
+          Format
+          <select id="format" required>
+            <option value="">Choisir un format</option>
+            <option>Vertical 1080x1920</option>
+            <option>Carré 1080x1080</option>
+            <option>Paysage 1920x1080</option>
+            <option>A4 portrait</option>
+          </select>
+        </label>
+
+        <label>
+          Ton rédactionnel
+          <select id="tone" required>
+            <option value="">Choisir un ton</option>
+            <option>Pédagogique</option>
+            <option>Expert</option>
+            <option>Inspirant</option>
+            <option>Convaincant</option>
+          </select>
+        </label>
+
+        <label>
+          Nombre de sections
+          <input id="sections" type="number" min="3" max="12" value="6" required>
+        </label>
+
+        <label class="full-width">
+          Points clés (un par ligne)
+          <textarea id="keyPoints" rows="6" placeholder="Statistique forte\nÉtape 1 : Diagnostic\nÉtape 2 : Déploiement\nRésultat attendu" required></textarea>
+        </label>
+
+        <label class="full-width">
+          Couleurs dominantes
+          <input id="palette" type="text" placeholder="Ex : bleu nuit, turquoise, blanc cassé" required>
+        </label>
+
+        <div class="actions full-width">
+          <button type="submit" class="btn btn-primary">Générer le prompt</button>
+          <button type="button" id="copyBtn" class="btn btn-secondary">Copier</button>
+        </div>
+      </form>
+
+      <div class="output-wrap" aria-live="polite">
+        <h3>Prompt généré</h3>
+        <textarea id="output" rows="12" readonly placeholder="Votre prompt apparaîtra ici..."></textarea>
       </div>
-    </form>
-
-    <p id="feedback" class="feedback"></p>
+    </section>
   </main>
 
   <script src="script.js"></script>
